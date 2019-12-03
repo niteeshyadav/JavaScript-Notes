@@ -1,0 +1,73 @@
+1. Learn asynchronous programming
+To fetch the data, your application would need several internal calls to several APIs. One way to solve this issue is by getting different middleware for each function. JavaScript has a lot of synchronous components since it’s single-threaded. These components have the capability to lock the whole application.
+However, JavaScript’s async.js feature helps in efficient management of asynchronous codes. This causes async code to get pushed to an event queue where it fires after the execution of all other codes. However, even with the JavaScript’s async feature, there’s still a possibility of using an external library that could revert to the synchronous blocking call. And this could have an adverse effect on the overall performance.
+The best way to tackle this is to always use asynchronous APIs in your code. However, you should always keep in mind that understanding the intricacies of async programming is often challenging for the novices.
+
+2. Define variables locally
+Whenever you call a certain function, the variables that are used to define that function are stored inside. Variables can be categorized into two types.
+•	Local variable: – Variables that are defined only within themselves.
+•	Global variable: – Variables that are used throughout the script.
+At the time when you’re calling a function, the browser does an activity which is termed as scope lookup. With the increase in the number of scopes in the scope chain, there’s also an increase in the amount of time taken to access variables that are outside the current scope.
+ 
+That’s the reason why an engine takes longer time to access a global variable as compared to that of a local variable. This means that if you define most of variables locally then there will be a rapid decrease in the time required by the engine to search them. Hence, it will boost the overall speed of the application.
+
+3. Keep codes light and small
+To maintain the high performance of mobile applications, it’s essential that you keep the code as light and compact as possible. Keeping codes light and small would reduce the latency and boost up the speed.
+While you’re in a development stage, you must ask yourself these questions below.
+Do I really need this module?
+Can I do this in a simpler manner?
+Why am I using this framework?
+Is this worth the overhead?
+Another method to optimize the application’s performance is by shrinking and diminishing various JS files into one. For example, if your app has seven JavaScript files then the browser will need to make seven different HTTP requests so that it can fetch them all. To avoid this situation, you can simply convert the seven files into one streamlined one.
+
+4. Event Delegation implementation
+Event Delegation makes it easier to use a single event handler which eventually helps in efficient management of a type of event for the entire page. In the absence of Event Delegation, large web applications can stop due to the presence of several event handlers. Event Delegation comes with many perks such as: less functionality to manage, less memory required to process, and fewer ties between DOM and code.
+
+5. Avoid unwanted loops
+Looping in JavaScript is not considered as a good thing since it puts extra strain on the browser. It’s important to note that you do less work in the loop. The lesser work you do in the loop the faster it will make your loop. Moreover, there are some simple tricks, one of which is of storing an array’s length in a different variable instead of reading the length at each iteration of the loop. This could go a long way to optimize your code and run things in a more efficient manner.
+
+6. Gzip compression
+Gzip is a software application which is used by most clients and servers for compression and decompression. When a browser which is compatible with gzip requests a resource, the server compresses the response before it sends it to the browser. Gzip compresses the big JavaScript files and saves the bandwidth which eventually reduces the latency & time lag and enhances the application’s overall performance.
+
+7. Minimize DOM access
+Interaction of host browser with objects (DOM) that takes place outside the JavaScript native environment results in a significant amount of performance lag and unpredictability. This happens since browser has to refresh every time. To avoid this, you can simply minimize the access of DOM. There are a few ways by which you achieve this. For example, you can store references to the browser objects or you can decrease the overall DOM traversal trips.
+
+8. Boost performance by caching object
+You can do this in two ways. The first is to use the HTTP protocol cache. And the second is to use JavaScript Cache API, which can be done with service worker installation. Generally, scripts are used for accessing certain objects. You can achieve significant improvement in performance by using a variable in references to that object or by simply storing the repeated access object inside the user-defined variable.
+
+9. Specify the execution context
+To develop website using JavaScript, you must define an environment where you can test the performance of the code and thus effectively measure any noticeable improvements which you’re planning to incorporate in the program.
+Performing optimizations and tests for all versions of JavaScript engine is not advisable due to feasibility issues. However, it doesn’t mean that you should test it in a single environment as may give partial results. Therefore, it becomes essential to define several well-defined environments to test whether the code works on them or not.
+
+10. Get rid of unused JavaScript
+This method is known for reducing the time taken by browser to compile the code. This also reduces the transmission time. To get rid of unused JavaScript, you must consider several points such as detecting functionality which is not being used by any of the users. This enables the website to load faster along with providing better user experience.
+
+11. Refrain from using too much memory
+Trying to limit memory use is one of the major skills that a javascript developer must possess. It’s because it’s difficult to determine the memory required by the device when it’s used to run your app. If at any instant of time, the code requests new memory reserve for browser, then the browser’s garbage collector will be executed and the JavaScript will be stopped. If this happens continuously then it will slow down the page. 
+
+12. Defer unnecessary load of JavaScript
+It’s obvious that users want the page to load quickly. However, it’s not necessary that all the functions are available at the initial load of a page. In case, a user performs various functions such as clicking and changing tabs, then it becomes possible for you to defer loading for that function till the initial page completes loading.
+This method helps you in avoiding loading and compiling of JavaScript code that would otherwise hold the initial display of page. Once the page completes loading, you can begin loading all those functionalities that are available once the user starts interacting. In RAIL model, Google advises to defer load in block of 50 ms. This avoids any influence of the user’s interaction with that of page.
+
+13. Eliminate memory leaks
+In case of a memory leak, the loaded page will use up more and more memory and eventually occupy all the available memory in the device. This would impact the overall performance adversely. You might be familiar with this type of failure that occurs on a page with an image slide.
+There are tools that analyse if your website is leaking memory. Chrome Dev Tools is one of such tools which records the timeline in the performance tab. Usually, the pieces of the removed DOM from the page are responsible for memory leaks because they have some variable which is responsible for reference which causes prevents the garbage collector from eliminating them.
+
+14. Use tools that detect problems
+Lighthouse is a tool widely used for web pages. It helps in accessibility, audit performance, SEO, and other best practices. Similarly, Google PageSpeed is built to help JavaScript developer to understand areas of improvement and performance optimizations of a website.
+In the Chrome’s main menu, there’s an option of ‘More Tools’ which shows you the memory and the CPU usage by each tab. To carry out even more detailed analysis use Performance view in either Chrome or Firefox. With this you can analyse various metrics, for example:
+ 
+Devtools’ performance analysis enables you to simulate network, CPU consumption, and other metrics at a time when the page is loading. Due to this, you can identify and fix problems seamlessly.
+ 
+To dive deeper, you must go with Navigation Timing API, which enables you to determine and measure which part of your code takes from the programming itself.
+NodeSource platform is apt for exploring performance at a granular level for all the applications built on Node.js.
+Moreover, comprehensive Node.js metrics also helps you to identify the source of memory leaks and other performance related issues. 
+
+15. Implement the various optimizations
+To solve all the tasks with optimal data structures, you must always use the algorithms that has the least computational complexity.
+•	Get the same results with fewer calculations by rewriting algorithms.
+•	Avert recursive calls
+•	Put in calculations, calls, and variables for all the repeated functions
+•	Simplify mathematical formulas
+•	Use search arrays to get a value which is based on another rather than that of case statement or a switch.
+•	Take advantage of speculative execution of processor by creating conditions that are likely to be true.
